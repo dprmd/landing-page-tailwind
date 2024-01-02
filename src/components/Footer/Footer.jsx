@@ -24,9 +24,9 @@ export default function Footer() {
                 <li className="text-[#06B6D4]">
                   <svg
                     role="img"
+                    viewBox="0 0 24 24"
                     width="30"
                     className="fill-current"
-                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <title>Tailwind CSS</title>
