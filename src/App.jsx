@@ -1,12 +1,15 @@
-import MessageBoxMabar from "./components/General/MessageBoxMabar";
-import ScroolToTop from "./components/General/ScroolToTop";
-import Nav from "./components/Header/Nav";
-import Home from "./components/Hero/Home";
-import About from "./components/About/About";
-import MySkill from "./components/MySkill/MySkill";
-import Portfolio from "./components/Portfolio/Portfolio";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+// Components
+import MessageBoxMabar from "./components/0_General/MessageBoxMabar";
+import ScroolToTop from "./components/0_General/ScroolToTop";
+import Nav from "./components/1_Header/Nav";
+import Home from "./components/2_Hero/Home";
+import About from "./components/3_About/About";
+import MySkill from "./components/4_MySkill/MySkill";
+import Portfolio from "./components/5_Portfolio/Portfolio";
+import Contact from "./components/6_Contact/Contact";
+import Footer from "./components/7_Footer/Footer";
+
+// React Hook
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -17,7 +20,7 @@ export default function App() {
   const [showScroolToTop, setShowScroolToTop] = useState(false);
   const [isNavTransparent, setIsNavTransparent] = useState(false);
 
-  const removeNavHamburger = (e) => {
+  const removeHamburgerActive = (e) => {
     if (
       !e.target.classList.contains("hamburger") &&
       !e.target.classList.contains("hamburger-line")
@@ -26,6 +29,7 @@ export default function App() {
     }
   };
 
+  // Get theme from localStorage
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
     setDarkMode(currentTheme === "dark");
@@ -46,7 +50,7 @@ export default function App() {
   };
 
   return (
-    <div className={darkMode && "dark"} onClick={removeNavHamburger}>
+    <div className={darkMode && "dark"} onClick={removeHamburgerActive}>
       <ScroolToTop showScroolToTop={showScroolToTop} />
 
       <MessageBoxMabar
@@ -58,7 +62,7 @@ export default function App() {
         darkMode={darkMode}
         setDarkMode={() => setDarkMode(!darkMode)}
         hamburgerActive={hamburgerActive}
-        setHamburgerActive={setHamburgerActive}
+        setHamburgerActive={() => setHamburgerActive(!hamburgerActive)}
         isNavTransparent={isNavTransparent}
       />
 

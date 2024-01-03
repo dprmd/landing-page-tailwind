@@ -11,9 +11,6 @@ export default function Nav({
   setHamburgerActive,
   isNavTransparent,
 }) {
-  const handleSetHamburgerActive = () => {
-    setHamburgerActive(!hamburgerActive);
-  };
 
   return (
     <nav
@@ -25,7 +22,7 @@ export default function Nav({
       <NavTitle title="LandingPage" />
       <Hamburger
         hamburgerActive={hamburgerActive}
-        setHamburgerActive={handleSetHamburgerActive}
+        setHamburgerActive={setHamburgerActive}
       />
       <NavBar
         hamburgerActive={hamburgerActive}
